@@ -1,6 +1,8 @@
 # JSON task
 the problem requires parsing a given string to check if it follows the **JSON object (JSONObject)** format. if valid, the task is to count all **JSON values (JSONValue)** within the object. otherwise, return `0`.
 
+-----
+
 ## key points
 * **valid JSONValue types:** `null`, `boolean`, `integer`, `float`, `string`, `JSONObject`, `JSONArray`
 * **JSONObject:** a set of key-value pairs where *keys are unique and strings*
@@ -10,6 +12,8 @@ the problem requires parsing a given string to check if it follows the **JSON ob
   * malformed JSON syntax (e.g., missing quotes for string keys, incorrect escape characters)
   * duplicate keys are resolved by keeping the last occurrence
 
+-----
+
 ## input
 a **single string** (max length `10000`)
 
@@ -17,6 +21,8 @@ a **single string** (max length `10000`)
 an **integer:**
 * **Number of JSONValues** inside the parsed JSONObject
 * `0` **if input is invalid** (not a JSONObject)
+
+-----
 
 ## examples
   * ### testcase 1:
