@@ -19,7 +19,7 @@ a **single string** (max length `10000`)
 
 ## output
 an **integer:**
-* **Number of JSONValues** inside the parsed JSONObject
+* **number of JSONValues** inside the parsed JSONObject
 * `0` **if input is invalid** (not a JSONObject)
 
 -----
@@ -57,7 +57,7 @@ an **integer:**
       (a nested structure with multiple values)
   * ### testcase 4 (invalid):
     * #### input:
-      ```
+      ```json
       true
       ```
     * #### output:
@@ -67,7 +67,7 @@ an **integer:**
       (not a JSONObject)
   * ### testcase 5 (invalid):
     * #### input:
-      ```
+      ```json
       [true]
       ```
     * #### output:
@@ -77,7 +77,7 @@ an **integer:**
       (not a JSONObject)
   * ### testcase 6 (invalid):
     * #### input:
-      ```
+      ```json
       [a:true]
       ```
     * #### output:
