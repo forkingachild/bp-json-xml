@@ -1,0 +1,6 @@
+{"a":"first","b":"second"}
+---
+<root>
+<a>"first"</a>
+<b>"second"</b>
+</root>

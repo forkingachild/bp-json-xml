@@ -1,0 +1,14 @@
+<base>
+    <a>"b"</a>
+    <bd>true</bd>
+    <ab>
+        <a>false</a>
+    </ab>
+    <li>235</li>
+    <li>235</li>
+    <li>
+        <akey>
+            <d>"<"</d>
+        </akey>
+    </li>
+</base>
