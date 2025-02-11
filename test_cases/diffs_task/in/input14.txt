@@ -1,6 +1,0 @@
-{"a":null,"b":["first"]}
----
-<root>
-<b>"first"</b>
-<a></a>
-</root>
