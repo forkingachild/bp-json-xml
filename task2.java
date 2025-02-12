@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-public class xml_count {
+public class task2 {
 
     private static class xml_element {
         String tag;

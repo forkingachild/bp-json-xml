@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-public class json_count {
+public class task1 {
 
     private static abstract class json_node {
         abstract int count();

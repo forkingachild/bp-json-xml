@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-public class diffs_count {
+public class task3 {
 
     static final int inf = 1000000;
 
