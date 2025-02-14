@@ -1,4 +1,4 @@
-## measuring data differences:
+# measuring data differences:
 in this part of the project the goal is to measure the difference between two data structures, each represented in either **XML** or **JSON** format. as explained in previous sections data representation in one format can be converted into the other. a **XMLObject** corresponds to a **JSONObject** and an **XMLValue** matches a **JSONValue**. however there are two key differences that challenge a one-to-one mapping between the formats:
 1. **root element naming**: in XML the root element has a name, whereas in JSON there is no explicit root key
 2. **array element naming**: in XML every element, including array elements, has a key. while in JSON array elements are indexed without names
@@ -7,7 +7,7 @@ these differences imply that an XML representation can always be converted to JS
 
 ---
 
-### tree representation of data:
+## tree representation of data:
 a dataset is represented as a **tree**, where:
 - the **root node** corresponds to the top-level **JSONObject** that encapsulates the entire dataset
 - each **JSONObject** or **JSONArray** corresponds to a **node** in the tree with the parent node being the **JSONObject** or **JSONArray** that contains it
@@ -25,7 +25,7 @@ each **leaf node** has a **value**, which is:
 
 ---
 
-### measuring differences between two data trees:
+## measuring differences between two data trees:
 to compute the **difference** between a **pair of datasets** (`original dataset` vs. `modified dataset`), the trees corresponding to both representations are compared. the difference is defined as the **minimum number of operations** required to transform one tree into the other
 
 two trees are considered **equivalent** if there exists a **one-to-one mapping** between their nodes such that:
@@ -33,7 +33,7 @@ two trees are considered **equivalent** if there exists a **one-to-one mapping**
 - their **parents** are also mapped to the same parent node
 - the **root node’s name is ignored** (it can differ)
 
-### allowed operations:
+## allowed operations:
 to transform one tree into another the following operations are allowed:
 - **add a new node** with an arbitrary name and empty value at the end of a sorted child list provided that alphabetical order is maintained.
 - **delete a leaf node**, but only if it is the last child in its parent's sorted list
@@ -42,22 +42,22 @@ to transform one tree into another the following operations are allowed:
 
 ---
 
-### input format:
+## input format:
 the input consists of two datasets (a **pair of values**) separated by a line containing `---`. 
 - the **first dataset** represents the **final state**
 - the **second dataset** represents the **initial state**
 - each dataset is either in **JSONObject** or **XMLObject** format
 - the number of lines and the length of each line do not exceed **1000**
 
-### output format:
+## output format:
 output a **single integer** representing the computed difference between the **second dataset** (original) and the **first dataset** (final)
 
 ---
 
-### examples:
+## examples:
 
-#### **example 1**
-##### **input:**
+### **example 1**
+#### **input:**
 ```
 <base>
   <b></b>
@@ -65,13 +65,13 @@ output a **single integer** representing the computed difference between the **s
 ---
 {"b":null}
 ```
-##### **output:**
+#### **output:**
 ```
 0
 ```
 
-#### **example 2**
-##### **input:**
+### **example 2**
+#### **input:**
 ```
 <abcd>
   <b></b>
@@ -81,13 +81,13 @@ output a **single integer** representing the computed difference between the **s
   <b></b>
 </a>
 ```
-##### **output:**
+#### **output:**
 ```
 0
 ```
 
-#### **example 3**
-##### **input:**
+### **example 3**
+#### **input:**
 ```
 {"a":"first","b":"second"}
 ---
@@ -96,25 +96,25 @@ output a **single integer** representing the computed difference between the **s
   <b>"second"</b>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 0
 ```
 
-#### **example 4**
-##### **input:**
+### **example 4**
+#### **input:**
 ```
 {"b":"second","a":"first"}
 ---
 {"a":"first","b":"second"}
 ```
-##### **output:**
+#### **output:**
 ```
 0
 ```
 
-#### **example 5**
-##### **input:**
+### **example 5**
+#### **input:**
 ```
 {"b":"second","a":"first"}
 ---
@@ -122,13 +122,13 @@ output a **single integer** representing the computed difference between the **s
   <a>"first"</a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 2
 ```
 
-#### **example 6**
-##### **input:**
+### **example 6**
+#### **input:**
 ```
 {"b":"second","a":"first"}
 ---
@@ -136,13 +136,13 @@ output a **single integer** representing the computed difference between the **s
   <a>"second"</a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 3
 ```
 
-#### **example 7**
-##### **input:**
+### **example 7**
+#### **input:**
 ```
 {"b":"second","a":"first"}
 ---
@@ -150,13 +150,13 @@ output a **single integer** representing the computed difference between the **s
   <b>"second"</b>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 4
 ```
 
-#### **example 8**
-##### **input:**
+### **example 8**
+#### **input:**
 ```
 {"a":null,"b":["first","second"]}
 ---
@@ -166,13 +166,13 @@ output a **single integer** representing the computed difference between the **s
   <a></a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 0
 ```
 
-#### **example 9**
-##### **input:**
+### **example 9**
+#### **input:**
 ```
 {"a":null,"b":["second","first"]}
 ---
@@ -182,13 +182,13 @@ output a **single integer** representing the computed difference between the **s
   <a></a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 2
 ```
 
-#### **example 10**
-##### **input:**
+### **example 10**
+#### **input:**
 ```
 {"a":null,"b":["first"]}
 ---
@@ -197,13 +197,13 @@ output a **single integer** representing the computed difference between the **s
   <a></a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 3
 ```
 
-#### **example 11**
-##### **input:**
+### **example 11**
+#### **input:**
 ```
 {"a":null,"b":[["second","first"]]}
 ---
@@ -213,7 +213,7 @@ output a **single integer** representing the computed difference between the **s
   <a></a>
 </root>
 ```
-##### **output:**
+#### **output:**
 ```
 6
 ```
